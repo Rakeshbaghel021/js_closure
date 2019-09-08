@@ -34,7 +34,7 @@ function forEach(array, callback) {
 
 console.log(forEach([1,2,3],function(e) {
 	console.log(e);
-})); 
+}));                                     //1,2,3
 	                                   
 
 
