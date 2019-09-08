@@ -27,6 +27,14 @@ console.log(map([1, 2, 3], addTwo)); //(3) [3, 4, 5]
 
 // Challenge 4
 function forEach(array, callback) {
+	for(i=0; i<array.length; i++) {
+		callback(array[i]);
+	}
+}
+
+console.log(forEach([1,2,3],function(e) {
+	console.log(e);
+})); 
 	                                   
 
 
