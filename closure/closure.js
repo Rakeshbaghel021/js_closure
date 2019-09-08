@@ -6,4 +6,15 @@ function nonsense(string){
     };
     blab();
 }
-nonsense("I am string");
+nonsense("Hello");
+
+//2.
+function nonsense(string){
+    var blab = function(){
+        alert(string);
+    };
+    blab();
+}
+
+setTimeout(nonsense, 2000,"Hello")
+
