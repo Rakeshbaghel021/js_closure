@@ -1,24 +1,42 @@
 // Challenge 1
-function addTwo(num) {}
+function addTwo(num) {
+	return num+2;
+}
 
-// To check if you've completed it, uncomment these console.logs!
-// console.log(addTwo(3));
-// console.log(addTwo(10));
+console.log(addTwo(3));
+console.log(addTwo(10));
 
 // Challenge 2
-function addS(word) {}
+function addS(word) {
+	return word+"s";
+}
 
-// uncomment these to check your work
-// console.log(addS('pizza'));
-// console.log(addS('bagel'));
+console.log(addS('pizza'));
+console.log(addS('bagel'));
 
 // Challenge 3
-function map(array, callback) {}
+function map(array, callback) {
+	let  newArray =[];
+	for (i=0; i< array.length; i++) {
+		newArray.push(callback(array[i]));
+	}
+	return newArray;
+}
 
-// console.log(map([1, 2, 3], addTwo));
+console.log(map([1, 2, 3], addTwo)); //(3) [3, 4, 5]
 
 // Challenge 4
-function forEach(array, callback) {}
+function forEach(array, callback) {
+	for(i=0; i<array.length; i++) {
+		callback(array[i]);
+	}
+}
+
+console.log(forEach([1,2,3],function(e) {
+	console.log(e);
+}));                                     //1,2,3
+	                                   
+
 
 // see for yourself if your forEach works!
 
@@ -27,13 +45,33 @@ function forEach(array, callback) {}
 //--------------------------------------------------
 
 //Extension 1
-function mapWith(array, callback) {}
+function mapWith(array, callback) {
+    var newArray = [];
+    array.forEach(element => {
+        callback(element);
+    });
+    return newArray;
+}
+
 
 //Extension 2
-function reduce(array, callback, initialValue) {}
+function reduce(array, callback, initialValue) {
+    let acc = initialValue;
+    array.forEach(function(element) {
+        acc = callback(acc, element);
+    });
+    return acc;
+}
+
+var nums = [4, 1, 3];
+var add = function(a, b) { return a + b; }
+reduce(nums, add, 0);
+
 
 //Extension 3
-function intersection(arrays) {}
+function intersection(arrays) {
+       
+}
 
 // console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]));
 // should log: [5, 15]
