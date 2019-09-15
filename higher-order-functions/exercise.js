@@ -46,13 +46,32 @@ console.log(forEach([1,2,3],function(e) {
 
 //Extension 1
 function mapWith(array, callback) {
+    var newArray = [];
+    array.forEach(element => {
+        callback(element);
+    });
+    return newArray;
 }
 
+
 //Extension 2
-function reduce(array, callback, initialValue) {}
+function reduce(array, callback, initialValue) {
+    let acc = initialValue;
+    array.forEach(function(element) {
+        acc = callback(acc, element);
+    });
+    return acc;
+}
+
+var nums = [4, 1, 3];
+var add = function(a, b) { return a + b; }
+reduce(nums, add, 0);
+
 
 //Extension 3
-function intersection(arrays) {}
+function intersection(arrays) {
+       
+}
 
 // console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]));
 // should log: [5, 15]
